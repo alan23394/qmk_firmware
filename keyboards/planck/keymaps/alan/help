@@ -1,0 +1,4 @@
+To make, go to the root qmk folder and type
+make planck/rev5:alan:dfu
+then hit Q on the adjust layer to go into flashing mode
+done!

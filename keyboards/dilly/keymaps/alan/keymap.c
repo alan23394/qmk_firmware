@@ -67,14 +67,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /*
-  ** Esc |`   |Ins |Home|Pgup| ,  | .  | /  |    |
+  ** Esc |`   |Ins |Home|Pgup| ,  | .  | /  | ;  |
   ** Tab |    |Del |End |Pgdn|Left|Down|Up  |Rght| '
   ** Shft|Ctrl|Alt |Win |    | () |    |    |    |
   **      +--One Shot--+
   */
 
   [_FN2] = LAYOUT_ortho_3x10(
-    KC_ESC,  KC_GRV,  KC_INS,  KC_HOME, KC_PGUP, KC_COMM, KC_DOT,  KC_SLSH, _______, _______,
+    KC_ESC,  KC_GRV,  KC_INS,  KC_HOME, KC_PGUP, KC_COMM, KC_DOT,  KC_SLSH, KC_SCLN, _______,
     KC_TAB,  KC_F12,  KC_DEL,  KC_END,  KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
     KC_LSFT, OS_LCTL, OS_LALT, OS_LGUI, _______, _______, _______, _______, _______, _______
   ),

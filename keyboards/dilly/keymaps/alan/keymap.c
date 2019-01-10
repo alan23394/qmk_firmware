@@ -27,6 +27,9 @@ extern keymap_config_t keymap_config;
 #define KC_ESL2 LT(_FN2, KC_ESC)
 #define KC_ENTS MT(MOD_RSFT, KC_ENT)
 // #define KC_ESCS MT(MOD_RSFT, KC_ESC)
+#define OS_LCTL OSM(MOD_LCTL)
+#define OS_LALT OSM(MOD_LALT)
+#define OS_LGUI OSM(MOD_LGUI)
 
 #define KC_GUIC LGUI(KC_C)
 
@@ -42,9 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_ortho_3x10(
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_V,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_BSPC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
-    KC_ZSFT, KC_X,    KC_C,    KC_D_L4, KC_SPL1, KC_ESL2, KC_H_L5, KC_B,    KC_K,    KC_ENTS
+    KC_ZSFT, KC_X,    KC_C,    KC_D_L4, KC_SPL1, KC_ESL2, KC_H,    KC_B,    KC_K,    KC_ENTS
   ),
 
+  /*
+  ** [    ]    (    )    ~    /    7    8    9    -
+  ** <    >    {    }    =    *    4    5    6    +
+  **                      ()  Bksp 1    2    3    0
+  */
   /*
   [_FN1] = LAYOUT_ortho_3x10(
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
@@ -59,21 +67,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /*
-  ** Esc  `    Ins  Home Pgup           !    ?    \
-  ** Tab       Del  End  Pgdn      .    ,    ;    '
-  ** Shft Ctrl Alt  Win        ()
-  **      +--OneShot--+
-  */
-  /*
-  ** [    ]    (    )    ~    /    7    8    9    -
-  ** <    >    {    }    =    *    4    5    6    +
-  **                      ()  Bksp 1    2    3    0
+  ** Esc |`   |Ins |Home|Pgup| ,  | .  | /  |    |
+  ** Tab |    |Del |End |Pgdn|Left|Down|Up  |Rght| '
+  ** Shft|Ctrl|Alt |Win |    | () |    |    |    |
+  **      +--One Shot--+
   */
 
   [_FN2] = LAYOUT_ortho_3x10(
-    KC_ESC,  KC_GRV,  KC_INS,  KC_HOME, KC_PGUP, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
-    KC_TAB,  KC_F12,  KC_DEL,  KC_END,  KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_GRV,
-    KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, _______, KC_DEL,  _______, _______, _______, _______
+    KC_ESC,  KC_GRV,  KC_INS,  KC_HOME, KC_PGUP, KC_COMM, KC_DOT,  KC_SLSH, _______, _______,
+    KC_TAB,  KC_F12,  KC_DEL,  KC_END,  KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
+    KC_LSFT, OS_LCTL, OS_LALT, OS_LGUI, _______, _______, _______, _______, _______, _______
   ),
 
   [_FN3] = LAYOUT_ortho_3x10(
